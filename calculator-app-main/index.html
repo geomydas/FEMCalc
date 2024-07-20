@@ -14,8 +14,56 @@
   </head>
   <body>
     <main>
-      
-      <section class="results" aria-label="Your calculated results go here" id="calculator-result">
+      <section class="theme">
+        <h1 class="app-title">calc</h1>
+        <div class="theme-container">
+          <p class="theme-title">theme</p>
+          <ul class="theme-container__switcher">
+            <li class="switcher__theme-name">
+              <label for="theme-1" class="theme-label">1</label>
+              <div class="theme-btn-wrapper theme-btn-wrapper--first">
+                <input
+                  type="radio"
+                  id="theme-1"
+                  name="theme"
+                  class="theme-btn"
+                  checked
+                /><span class="theme-btn-icon"></span>
+              </div>
+            </li>
+            <li class="switcher__theme-name">
+              <label for="theme-2" class="theme-label">2</label>
+              <div class="theme-btn-wrapper">
+                <input
+                  type="radio"
+                  id="theme-2"
+                  name="theme"
+                  class="theme-btn"
+                />
+                <span class="theme-btn-icon"></span>
+              </div>
+            </li>
+            <li class="switcher__theme-name">
+              <label for="theme-3" class="theme-label">3</label>
+              <div class="theme-btn-wrapper theme-btn-wrapper--last">
+                <input
+                  type="radio"
+                  id="theme-3"
+                  name="theme"
+                  class="theme-btn"
+                />
+                <span class="theme-btn-icon"></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section
+        class="results"
+        aria-label="Your calculated results go here"
+        id="calculator-result"
+      >
         0
       </section>
       <section class="keypad" aria-label="Calculator">
@@ -32,15 +80,31 @@
         <button class="calculator-btn" data-btn-value="4">4</button>
         <button class="calculator-btn" data-btn-value="5">5</button>
         <button class="calculator-btn" data-btn-value="6">6</button>
-        <button aria-label="add 2 numbers" class="calculator-btn" data-btn-value="+">+</button>
+        <button
+          aria-label="add 2 numbers"
+          class="calculator-btn"
+          data-btn-value="+"
+        >
+          +
+        </button>
         <button class="calculator-btn" data-btn-value="1">1</button>
         <button class="calculator-btn" data-btn-value="2">2</button>
         <button class="calculator-btn" data-btn-value="3">3</button>
         <button class="calculator-btn" data-btn-value="-">-</button>
-        <button aria-label="decimal point" class="calculator-btn" data-btn-value=".">.</button>
+        <button
+          aria-label="decimal point"
+          class="calculator-btn"
+          data-btn-value="."
+        >
+          .
+        </button>
         <button class="calculator-btn" data-btn-value="0">0</button>
-        <button aria-label="divide" class="calculator-btn" data-btn-value="/">/</button>
-        <button aria-label="multiply" class="calculator-btn" data-btn-value="*">x</button>
+        <button aria-label="divide" class="calculator-btn" data-btn-value="/">
+          /
+        </button>
+        <button aria-label="multiply" class="calculator-btn" data-btn-value="*">
+          x
+        </button>
         <button
           aria-label="same as the backspace but deletes all "
           class="reset"
