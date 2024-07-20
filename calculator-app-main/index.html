@@ -15,39 +15,42 @@
   <body>
     <main>
       
-      <section class="results" aria-label="Your calculated results go here">
-        69420
+      <section class="results" aria-label="Your calculated results go here" id="calculator-result">
+        0
       </section>
       <section class="keypad" aria-label="Calculator">
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
+        <button class="calculator-btn" data-btn-value="7">7</button>
+        <button class="calculator-btn" data-btn-value="8">8</button>
+        <button class="calculator-btn" data-btn-value="9">9</button>
         <button
           aria-label="does a backspace when you do a mistake"
           class="delete"
+          id="delete-btn"
         >
           DEL
         </button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button aria-label="add 2 numbers">+</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>-</button>
-        <button aria-label="decimal point">.</button>
-        <button>0</button>
-        <button aria-label="divide">/</button>
-        <button aria-label="multiply">x</button>
+        <button class="calculator-btn" data-btn-value="4">4</button>
+        <button class="calculator-btn" data-btn-value="5">5</button>
+        <button class="calculator-btn" data-btn-value="6">6</button>
+        <button aria-label="add 2 numbers" class="calculator-btn" data-btn-value="+">+</button>
+        <button class="calculator-btn" data-btn-value="1">1</button>
+        <button class="calculator-btn" data-btn-value="2">2</button>
+        <button class="calculator-btn" data-btn-value="3">3</button>
+        <button class="calculator-btn" data-btn-value="-">-</button>
+        <button aria-label="decimal point" class="calculator-btn" data-btn-value=".">.</button>
+        <button class="calculator-btn" data-btn-value="0">0</button>
+        <button aria-label="divide" class="calculator-btn" data-btn-value="/">/</button>
+        <button aria-label="multiply" class="calculator-btn" data-btn-value="*">x</button>
         <button
           aria-label="same as the backspace but deletes all "
           class="reset"
+          id="reset-btn"
         >
           RESET
         </button>
-        <button class="equal">=</button>
+        <button class="equal" id="result-btn">=</button>
       </section>
     </main>
+    <script src="./main.js"></script>
   </body>
 </html>
