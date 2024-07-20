@@ -1,0 +1,267 @@
+@font-face {
+  font-display: swap;
+  font-family: "League Spartan";
+  font-style: normal;
+  font-weight: 700;
+  src: url("league-spartan-v11-latin-700.woff2") format("woff2");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+:root {
+  /* THEME 1 */
+  /* THEME 1 */
+  /* THEME 1 */
+
+  /* Backgrounds */
+
+  --theme1-body-bg: hsl(222, 26%, 31%);
+  --theme1-keypad-bg: hsl(223, 31%, 20%);
+  --theme1-results-bg: hsl(224, 36%, 15%);
+
+  /* Keys */
+
+  --theme1-del-reset-bg: hsl(225, 21%, 49%);
+  --theme1-del-reset-shadow: hsl(224, 28%, 35%);
+  --theme1-equalsign-bg: hsl(6, 63%, 50%);
+  --theme1-equalsign-shadow: hsl(6, 70%, 34%);
+  --theme1-key-bg: hsl(30, 25%, 89%);
+  --theme1-key-shadow: hsl(28, 16%, 65%);
+
+  /* # Text */
+
+  --theme1-black-text: hsl(221, 14%, 31%);
+  --theme1-white-text: hsl(0, 0%, 100%);
+
+  /* THEME 2 */
+  /* THEME 2 */
+  /* THEME 2 */
+
+  /* Backgrounds */
+
+  --theme2-body-bg: hsl(0, 0%, 90%);
+  --theme2-keypad-bg: hsl(0, 5%, 81%);
+  --theme2-results-bg: hsl(0, 0%, 93%);
+
+  /* Keys */
+
+  --theme2-del-reset-bg: hsl(185, 42%, 37%);
+  --theme2-del-reset-shadow: hsl(185, 58%, 25%);
+  --theme2-equalsign-bg: hsl(25, 98%, 40%);
+  --theme2-equalsign-shadow: hsl(25, 99%, 27%);
+  --theme2-key-bg: hsl(45, 7%, 89%);
+  --theme2-key-shadow: hsl(35, 11%, 61%);
+
+  /* Text */
+
+  --theme2-black-text: hsl(60, 10%, 19%);
+  --theme2-white-text: hsl(0, 0%, 100%);
+
+  /* THEME 3 */
+  /* THEME 3 */
+  /* THEME 3 */
+
+  /* Background */
+
+  --theme3-body-bg: hsl(268, 75%, 9%);
+  --theme3-toggle-keypad-screen-bg: hsl(268, 71%, 12%);
+
+  /* Keys */
+
+  --theme3-del-reset-shadow: hsl(281, 89%, 26%);
+  --theme3-del-reset-shadow: hsl(285, 91%, 52%);
+  --theme3-equalsign-bg: hsl(176, 100%, 44%);
+  --theme3-equalsign-shadow: hsl(177, 92%, 70%);
+  --theme3-key-bg: hsl(268, 47%, 21%);
+  --theme3-key-shadow: hsl(290, 70%, 36%);
+
+  /* Text */
+
+  --theme3-yellow-text: hsl(52, 100%, 62%);
+  --theme3-black-text: hsl(198, 20%, 13%);
+  --theme3-white-text: hsl(0, 0%, 100%);
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  padding: 1.75rem;
+}
+/* shared styles */
+ 
+.results {
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  font-size: 3.5rem;
+  line-height: 100px;
+  text-align: right;
+  padding: 0 1rem;
+}
+
+.keypad {
+  padding: 1.5rem;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.keypad button {
+  font-size: 2rem;
+  border: 0;
+  border-radius: 5px;
+  padding: 0.25rem 0.75rem;
+  transition: 0.2s;
+}
+
+button:hover {
+  filter: brightness(1.25);
+}
+
+.reset {
+  grid-column: span 2;
+}
+.equal {
+  grid-column: span 2;
+}
+
+/* Theme 1 */
+body {
+  background-color: var(--theme1-body-bg);
+}
+
+h3 {
+  color: var(--theme1-white-text);
+}
+ 
+.results {
+  background-color: var(--theme1-results-bg);
+  color: var(--theme1-white-text);
+}
+.keypad {
+  background-color: var(--theme1-keypad-bg);
+}
+
+.equal {
+  background-color: var(--theme1-equalsign-bg);
+  box-shadow: 0 5px 0 0 var(--theme1-equalsign-shadow);
+}
+
+.reset,
+.delete {
+  background-color: var(--theme1-del-reset-bg);
+  box-shadow: 0 5px 0 0 var(--theme1-del-reset-shadow);
+}
+.reset,
+.equal,
+.delete {
+  color: var(--theme1-white-text);
+}
+button:not(.reset, .equal, .delete) {
+  color: var(--theme1-black-text);
+  box-shadow: 0 5px 0 0 var(--theme1-key-shadow);
+}
+
+/* Theme 2 */
+/* body {
+  background-color: var(--theme2-body-bg);
+}
+.results {
+  background-color: var(--theme2-results-bg);
+  color: var(--theme2-black-text);
+}
+.keypad {
+  background-color: var(--theme2-keypad-bg);
+}
+.equal {
+  background-color: var(--theme2-equalsign-bg);
+  box-shadow: 0 5px 0 0 var(--theme2-equalsign-shadow);
+}
+
+.reset,
+.delete {
+  background-color: var(--theme2-del-reset-bg);
+  box-shadow: 0 5px 0 0 var(--theme2-del-reset-shadow);
+}
+.reset,
+.equal,
+.delete {
+  color: var(--theme2-white-text);
+}
+ button:not(.reset, .equal, .delete) {
+  color: var(--theme2-black-text);
+  box-shadow: 0 5px 0 0 var(--theme2-key-shadow);
+} */
+/* Theme 3 */
+/* body {
+  background-color: var(--theme3-body-bg);
+}
+.results {
+  background-color: var(--theme3-toggle-keypad-screen-bg);
+  color: var(--theme3-yellow-text);
+}
+.keypad {
+  background-color: var(--theme3-toggle-keypad-screen-bg);
+}
+.equal {
+  background-color: var(--theme3-equalsign-bg);
+  box-shadow: 0 5px 0 0 var(--theme3-equalsign-shadow);
+}
+
+.reset,
+.delete {
+  background-color: #56077c;
+  box-shadow: 0 5px 0 0 var(--theme3-del-reset-shadow);
+}
+.reset,
+.equal,
+.delete {
+  color: var(--theme3-white-text);
+}
+ button:not(.reset, .equal, .delete) {
+  background-color: var(--theme3-key-bg);
+  color: var(--theme3-yellow-text);
+  box-shadow: 0 5px 0 0 var(--theme3-key-shadow);
+} */
