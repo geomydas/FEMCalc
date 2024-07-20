@@ -127,7 +127,9 @@ body {
   padding: 1.75rem;
 }
 /* shared styles */
- 
+main {
+  max-width: 24.75rem;
+}
 .results {
   width: 100%;
   min-height: 100px;
@@ -137,6 +139,7 @@ body {
   line-height: 100px;
   text-align: right;
   padding: 0 1rem;
+  overflow: auto;
 }
 
 .keypad {
@@ -175,7 +178,7 @@ body {
 h3 {
   color: var(--theme1-white-text);
 }
- 
+
 .results {
   background-color: var(--theme1-results-bg);
   color: var(--theme1-white-text);
