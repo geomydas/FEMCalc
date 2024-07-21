@@ -49,23 +49,23 @@ h6 {
 
   /* Backgrounds */
 
-  --theme1-body-bg: hsl(222, 26%, 31%);
-  --theme1-keypad-bg: hsl(223, 31%, 20%);
-  --theme1-results-bg: hsl(224, 36%, 15%);
+  --theme-keypad-bg: hsl(223, 31%, 20%);
+  --theme-body-bg: hsl(222, 26%, 31%);
+  --theme-results-bg: hsl(224, 36%, 15%);
 
   /* Keys */
 
-  --theme1-del-reset-bg: hsl(225, 21%, 49%);
-  --theme1-del-reset-shadow: hsl(224, 28%, 35%);
-  --theme1-equalsign-bg: hsl(6, 63%, 50%);
-  --theme1-equalsign-shadow: hsl(6, 70%, 34%);
-  --theme1-key-bg: hsl(30, 25%, 89%);
-  --theme1-key-shadow: hsl(28, 16%, 65%);
+  --theme-del-reset-bg: hsl(225, 21%, 49%);
+  --theme-del-reset-shadow: hsl(224, 28%, 35%);
+  --theme-equalsign-bg: hsl(6, 63%, 50%);
+  --theme-equalsign-shadow: hsl(6, 70%, 34%);
+  --theme-key-bg: hsl(30, 25%, 89%);
+  --theme-key-shadow: hsl(28, 16%, 65%);
 
   /* # Text */
 
-  --theme1-black-text: hsl(221, 14%, 31%);
-  --theme1-white-text: hsl(0, 0%, 100%);
+  --theme-black-text: hsl(221, 14%, 31%);
+  --theme-white-text: hsl(0, 0%, 100%);
 
   /* THEME 2 */
   /* THEME 2 */
@@ -126,10 +126,12 @@ body {
   place-items: center;
   padding: 1.75rem;
 }
+
 /* shared styles */
 main {
   max-width: 24.75rem;
 }
+
 .results {
   width: 100%;
   min-height: 100px;
@@ -172,39 +174,134 @@ button:hover {
 
 /* Theme 1 */
 body {
-  background-color: var(--theme1-body-bg);
+  background-color: var(--theme-body-bg);
 }
 
 h3 {
-  color: var(--theme1-white-text);
+  color: var(--theme-white-text);
 }
 
 .results {
-  background-color: var(--theme1-results-bg);
-  color: var(--theme1-white-text);
+  background-color: var(--theme-results-bg);
+  color: var(--theme-white-text);
 }
 .keypad {
-  background-color: var(--theme1-keypad-bg);
+  background-color: var(--theme-keypad-bg);
 }
 
 .equal {
-  background-color: var(--theme1-equalsign-bg);
-  box-shadow: 0 5px 0 0 var(--theme1-equalsign-shadow);
+  background-color: var(--theme-equalsign-bg);
+  box-shadow: 0 5px 0 0 var(--theme-equalsign-shadow);
 }
 
 .reset,
 .delete {
-  background-color: var(--theme1-del-reset-bg);
-  box-shadow: 0 5px 0 0 var(--theme1-del-reset-shadow);
+  background-color: var(--theme-del-reset-bg);
+  box-shadow: 0 5px 0 0 var(--theme-del-reset-shadow);
 }
 .reset,
 .equal,
 .delete {
-  color: var(--theme1-white-text);
+  color: var(--theme-white-text);
 }
+
 button:not(.reset, .equal, .delete) {
-  color: var(--theme1-black-text);
-  box-shadow: 0 5px 0 0 var(--theme1-key-shadow);
+  color: var(--theme-black-text);
+  box-shadow: 0 5px 0 0 var(--theme-key-shadow);
+}
+
+.theme {
+  padding:2rem 0rem;
+  display:flex;
+  align-items:center; 
+  justify-content:space-between;
+}
+
+.theme-btn {
+  cursor:pointer;
+  height:25px;
+  width:25px;
+  padding:0;
+  margin:0;
+  border:none;
+  opacity:0;
+  background: transparent;
+  z-index:2;
+}
+
+.theme-btn:checked + .theme-btn-icon {
+  background-color: var(--theme-equalsign-bg);
+}
+
+.theme-btn-wrapper { 
+  --size:calc(25px + 0.5rem);
+  height:var(--size);
+  width:var(--size);
+  display:flex;
+  align-items: center;
+  background-color:var(--theme-results-bg); 
+  position:relative;
+}
+
+.theme-btn-wrapper {
+  padding:0.3rem;
+}
+
+.theme-btn-wrapper--first {
+  padding:0.3rem 0.5rem;
+  border-radius:50px 0px 0px 50px;
+}
+
+.theme-btn-wrapper--last {
+  padding:0.3rem 0.5rem;
+  border-radius:0px 50px 50px 0px;
+}
+
+.theme-btn-icon {
+  display:inline-block;
+  height:25px;
+  width:25px;
+  border-radius:50%;
+  background-color:var(--theme-equalsign-bg);
+  background-color:transparent;
+  position:absolute;  
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+
+.app-title {
+  color:var(--theme-white-text);
+  font-size:2rem;
+  font-weight:900;
+}
+
+.theme-container {
+  display:flex;
+  justify-content: center;
+  align-items:flex-end;
+}
+
+.theme-title {
+  color:var(--theme-white-text);
+  font-size: 1rem;
+  text-transform:uppercase;
+}
+
+.theme-container__switcher {
+  display:flex;
+  list-style-type:none;
+}
+
+.theme-label {
+  cursor:pointer;
+  color:var(--theme-white-text);
+}
+
+.switcher__theme-name {
+  display:flex;
+  align-items: center;
+  flex-direction:column;
 }
 
 /* Theme 2 */
