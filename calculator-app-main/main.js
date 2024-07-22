@@ -1,4 +1,20 @@
+import { setTheme } from "./scripts/theme.js";
+
 (function () {
+  const themeButtons = document.querySelectorAll(".theme-btn");
+
+  const root = window.document.documentElement;
+  const userSystemTheme = window.matchMedia("(prefers-color-scheme:dark)");
+  const initializeTheme = () => {
+    setTheme(localStorage.getItem("calculatorTheme"), userSystemTheme, root);
+    if(localStorage.getItem("calculatorTheme") !== null){
+      const currentTheme = localStorage.getItem("calculatorTheme");
+      const themeIndex = (currentTheme === "dark") ? 0 : (currentTheme === "light") ? 1 : 2;
+      themeButtons[themeIndex].checked = true;
+    }
+  }
+  initializeTheme();
+
   const calculatorButtons = document.querySelectorAll(".calculator-btn");
   const calculatorResult = document.getElementById("calculator-result");
 
@@ -34,7 +50,7 @@
   const calculateResult = () => {
     try {
       const result = eval(calculatorInput);
-      if(result === Infinity){
+      if (result === Infinity) {
         throw new Error("can't divide by zero");
       }
       calculatorInput = String(result);
@@ -52,7 +68,10 @@
   };
 
   const deleteItem = () => {
-    const newCalculatorInput = calculatorInput.slice(0,calculatorInput.length -1);
+    const newCalculatorInput = calculatorInput.slice(
+      0,
+      calculatorInput.length - 1
+    );
     calculatorInput = newCalculatorInput;
     renderCalculatorValue();
   };
@@ -71,4 +90,12 @@
     .getElementById("reset-btn")
     .addEventListener("click", resetCalculator);
   document.getElementById("delete-btn").addEventListener("click", deleteItem);
+
+  themeButtons.forEach((theme) => {
+    theme.addEventListener("click", (event) => {
+      const themeName = event.target.dataset.themeName;
+      localStorage.setItem("calculatorTheme", themeName);
+      setTheme(localStorage.getItem("calculatorTheme"), userSystemTheme, root);
+    });
+  });
 })();

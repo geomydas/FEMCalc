@@ -48,72 +48,21 @@ h6 {
   /* THEME 1 */
 
   /* Backgrounds */
+  --main-bg:hsl(222, 26%, 31%);
+  --secondary-bg:hsl(223, 31%, 20%);
+  --result-screen-bg:hsl(224, 36%, 15%);
+  --number-btn-bg:hsl(30, 25%, 89%);
+  --function-bg:hsl(225, 21%, 49%);
+  --accent-bg:hsl(6, 63%, 50%);
 
-  --theme-keypad-bg: hsl(223, 31%, 20%);
-  --theme-body-bg: hsl(222, 26%, 31%);
-  --theme-results-bg: hsl(224, 36%, 15%);
+  --text-primary-clr:hsl(0, 0%, 100%);
+  --text-secondary-clr:hsl(222, 26%, 31%);
+  --text-equal-clr:hsl(0, 0%, 100%);
+  --text-function-clr:hsl(0, 0%, 100%);
 
-  /* Keys */
-
-  --theme-del-reset-bg: hsl(225, 21%, 49%);
-  --theme-del-reset-shadow: hsl(224, 28%, 35%);
-  --theme-equalsign-bg: hsl(6, 63%, 50%);
-  --theme-equalsign-shadow: hsl(6, 70%, 34%);
-  --theme-key-bg: hsl(30, 25%, 89%);
-  --theme-key-shadow: hsl(28, 16%, 65%);
-
-  /* # Text */
-
-  --theme-black-text: hsl(221, 14%, 31%);
-  --theme-white-text: hsl(0, 0%, 100%);
-
-  /* THEME 2 */
-  /* THEME 2 */
-  /* THEME 2 */
-
-  /* Backgrounds */
-
-  --theme2-body-bg: hsl(0, 0%, 90%);
-  --theme2-keypad-bg: hsl(0, 5%, 81%);
-  --theme2-results-bg: hsl(0, 0%, 93%);
-
-  /* Keys */
-
-  --theme2-del-reset-bg: hsl(185, 42%, 37%);
-  --theme2-del-reset-shadow: hsl(185, 58%, 25%);
-  --theme2-equalsign-bg: hsl(25, 98%, 40%);
-  --theme2-equalsign-shadow: hsl(25, 99%, 27%);
-  --theme2-key-bg: hsl(45, 7%, 89%);
-  --theme2-key-shadow: hsl(35, 11%, 61%);
-
-  /* Text */
-
-  --theme2-black-text: hsl(60, 10%, 19%);
-  --theme2-white-text: hsl(0, 0%, 100%);
-
-  /* THEME 3 */
-  /* THEME 3 */
-  /* THEME 3 */
-
-  /* Background */
-
-  --theme3-body-bg: hsl(268, 75%, 9%);
-  --theme3-toggle-keypad-screen-bg: hsl(268, 71%, 12%);
-
-  /* Keys */
-
-  --theme3-del-reset-shadow: hsl(281, 89%, 26%);
-  --theme3-del-reset-shadow: hsl(285, 91%, 52%);
-  --theme3-equalsign-bg: hsl(176, 100%, 44%);
-  --theme3-equalsign-shadow: hsl(177, 92%, 70%);
-  --theme3-key-bg: hsl(268, 47%, 21%);
-  --theme3-key-shadow: hsl(290, 70%, 36%);
-
-  /* Text */
-
-  --theme3-yellow-text: hsl(52, 100%, 62%);
-  --theme3-black-text: hsl(198, 20%, 13%);
-  --theme3-white-text: hsl(0, 0%, 100%);
+  --number-btn-shadow:hsl(28, 16%, 65%);
+  --function-btn-shadow:hsl(224, 28%, 35%);
+  --function-equal-shadow:hsl(6, 70%, 34%);
 }
 
 body {
@@ -159,6 +108,7 @@ main {
   border-radius: 5px;
   padding: 0.25rem 0.75rem;
   transition: 0.2s;
+  /* background-color:var(--theme-key-bg); */
 }
 
 button:hover {
@@ -174,7 +124,7 @@ button:hover {
 
 /* Theme 1 */
 body {
-  background-color: var(--theme-body-bg);
+  background-color: var(--main-bg);
 }
 
 h3 {
@@ -182,32 +132,30 @@ h3 {
 }
 
 .results {
-  background-color: var(--theme-results-bg);
-  color: var(--theme-white-text);
+  color: var(--text-primary-clr);
+  background-color: var(--result-screen-bg);
 }
 .keypad {
-  background-color: var(--theme-keypad-bg);
+  background-color: var(--secondary-bg);
+}
+
+.delete,
+.reset {
+  color:var(--text-function-clr);
+  background-color:var(--function-bg);
+  box-shadow: 0 5px 0 0 var(--function-btn-shadow);
 }
 
 .equal {
-  background-color: var(--theme-equalsign-bg);
-  box-shadow: 0 5px 0 0 var(--theme-equalsign-shadow);
-}
-
-.reset,
-.delete {
-  background-color: var(--theme-del-reset-bg);
-  box-shadow: 0 5px 0 0 var(--theme-del-reset-shadow);
-}
-.reset,
-.equal,
-.delete {
-  color: var(--theme-white-text);
+  color:var(--text-equal-clr);
+  background-color:var(--accent-bg);
+  box-shadow:0 5px 0 0 var(--function-equal-shadow);
 }
 
 button:not(.reset, .equal, .delete) {
-  color: var(--theme-black-text);
-  box-shadow: 0 5px 0 0 var(--theme-key-shadow);
+  color: var(--text-secondary-clr);
+  background-color: var(--number-btn-bg);
+  box-shadow: 0 5px 0 0 var(--number-btn-shadow);
 }
 
 .theme {
@@ -230,7 +178,7 @@ button:not(.reset, .equal, .delete) {
 }
 
 .theme-btn:checked + .theme-btn-icon {
-  background-color: var(--theme-equalsign-bg);
+  background-color: var(--accent-bg);
 }
 
 .theme-btn-wrapper { 
@@ -239,7 +187,7 @@ button:not(.reset, .equal, .delete) {
   width:var(--size);
   display:flex;
   align-items: center;
-  background-color:var(--theme-results-bg); 
+  background-color:var(--secondary-bg); 
   position:relative;
 }
 
@@ -262,8 +210,6 @@ button:not(.reset, .equal, .delete) {
   height:25px;
   width:25px;
   border-radius:50%;
-  background-color:var(--theme-equalsign-bg);
-  background-color:transparent;
   position:absolute;  
   left:50%;
   top:50%;
@@ -271,7 +217,7 @@ button:not(.reset, .equal, .delete) {
 }
 
 .app-title {
-  color:var(--theme-white-text);
+  color:var(--text-primary-clr);
   font-size:2rem;
   font-weight:900;
 }
@@ -283,7 +229,7 @@ button:not(.reset, .equal, .delete) {
 }
 
 .theme-title {
-  color:var(--theme-white-text);
+  color:var(--text-primary-clr);
   font-size: 1rem;
   text-transform:uppercase;
 }
@@ -295,7 +241,7 @@ button:not(.reset, .equal, .delete) {
 
 .theme-label {
   cursor:pointer;
-  color:var(--theme-white-text);
+  color:var(--text-primary-clr);
 }
 
 .switcher__theme-name {
@@ -303,65 +249,3 @@ button:not(.reset, .equal, .delete) {
   align-items: center;
   flex-direction:column;
 }
-
-/* Theme 2 */
-/* body {
-  background-color: var(--theme2-body-bg);
-}
-.results {
-  background-color: var(--theme2-results-bg);
-  color: var(--theme2-black-text);
-}
-.keypad {
-  background-color: var(--theme2-keypad-bg);
-}
-.equal {
-  background-color: var(--theme2-equalsign-bg);
-  box-shadow: 0 5px 0 0 var(--theme2-equalsign-shadow);
-}
-
-.reset,
-.delete {
-  background-color: var(--theme2-del-reset-bg);
-  box-shadow: 0 5px 0 0 var(--theme2-del-reset-shadow);
-}
-.reset,
-.equal,
-.delete {
-  color: var(--theme2-white-text);
-}
- button:not(.reset, .equal, .delete) {
-  color: var(--theme2-black-text);
-  box-shadow: 0 5px 0 0 var(--theme2-key-shadow);
-} */
-/* Theme 3 */
-/* body {
-  background-color: var(--theme3-body-bg);
-}
-.results {
-  background-color: var(--theme3-toggle-keypad-screen-bg);
-  color: var(--theme3-yellow-text);
-}
-.keypad {
-  background-color: var(--theme3-toggle-keypad-screen-bg);
-}
-.equal {
-  background-color: var(--theme3-equalsign-bg);
-  box-shadow: 0 5px 0 0 var(--theme3-equalsign-shadow);
-}
-
-.reset,
-.delete {
-  background-color: #56077c;
-  box-shadow: 0 5px 0 0 var(--theme3-del-reset-shadow);
-}
-.reset,
-.equal,
-.delete {
-  color: var(--theme3-white-text);
-}
- button:not(.reset, .equal, .delete) {
-  background-color: var(--theme3-key-bg);
-  color: var(--theme3-yellow-text);
-  box-shadow: 0 5px 0 0 var(--theme3-key-shadow);
-} */
